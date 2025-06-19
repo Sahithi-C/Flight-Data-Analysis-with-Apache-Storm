@@ -8,8 +8,7 @@ This project practices distributed data streaming and analysis, using Apache Sto
 curl -s "https://opensky-network.org/api/states/all" | python -m json.tool > flights.txt 
 
 This JSON-formatted file includes a list of flights, each with 17 data fields 
-'''
-{ 
+'''{ 
     "states": [ 
         [ 
             "a09281", 
@@ -35,8 +34,8 @@ This JSON-formatted file includes a list of flights, each with 17 data fields
         ], 
     ], 
     "time": 1551555579 
-} 
-'''
+} '''
+
  **(2) aiports.txt:** a dataset of the top 40 US airports, including each airport’s city name, IATA code, latitude and longitude. This text file is used for running the program.
 
 '''  

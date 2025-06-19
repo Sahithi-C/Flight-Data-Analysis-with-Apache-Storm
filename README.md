@@ -4,8 +4,10 @@ This project practices distributed data streaming and analysis, using Apache Sto
 
 ## Input and Output Data:
 **Input files:** There are two input files under the src/main/resources/ directory.
-**(1) flights.txt:** a worldwide flight dataset obtained from https://opensky-network.org/. To verify the program, I used this text file. Playing with real-time flight data, by executing the get_flights_data.sh under the same directory. It just includes a curl command: 
-curl -s "https://opensky-network.org/api/states/all" | python -m json.tool > flights.txt 
+
+**(1) flights.txt:** a worldwide flight dataset obtained from https://opensky-network.org/. To verify the program, I used this text file. Playing with real-time flight data, by executing the get_flights_data.sh under the same directory. 
+It just includes a curl command: 
+```curl -s "https://opensky-network.org/api/states/all" | python -m json.tool > flights.txt``` 
 
 This JSON-formatted file includes a list of flights, each with 17 data fields 
 ```

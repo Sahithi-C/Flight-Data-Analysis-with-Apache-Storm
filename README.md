@@ -1,4 +1,4 @@
-****Flight Data Analysis with Apache Storm****
+***Flight Data Analysis with Apache Storm***
 
 This project practices distributed data streaming and analysis, using Apache Storm. As an example dataset, I used the Open Air Traffic Data for Research website (at https://opensky-network.org/) and count the number of flights departing from or arriving at each US major airport per airline company.  
 

@@ -8,7 +8,8 @@ This project practices distributed data streaming and analysis, using Apache Sto
 curl -s "https://opensky-network.org/api/states/all" | python -m json.tool > flights.txt 
 
 This JSON-formatted file includes a list of flights, each with 17 data fields 
-'''{ 
+```
+{ 
     "states": [ 
         [ 
             "a09281", 
@@ -34,21 +35,22 @@ This JSON-formatted file includes a list of flights, each with 17 data fields
         ], 
     ], 
     "time": 1551555579 
-} '''
+}
+```
 
  **(2) aiports.txt:** a dataset of the top 40 US airports, including each airport’s city name, IATA code, latitude and longitude. This text file is used for running the program.
 
-'''  
+```
 Atlanta,ATL,33.6367,-84.4281 
 Los Angeles,LAX,33.9425,-118.4081 
 Dallas-Fort Worth,DFW,32.8969,-97.0381 
 ...
-'''
+```
 
 ## System.out messages: 
 This program reads flights.txt, choose only flights flying closer to any of the top 40 airports, (assuming that they just took off from or are landing at the airport rather than passing it over), and sort them out per each airline company. The expected output is: 
 
- '''
+ ```
 "transponder address",  // [0] 
 "call sign",            // [1] 
 "origin country",       // [2] 
@@ -95,7 +97,7 @@ This program reads flights.txt, choose only flights flying closer to any of the 
          total #flights = 15 
  
  ...
- '''
+ ```
 
 ## Documentation:
 **1. TopologyMain.java:** This is the main program which connects all components together into the processing pipeline. It manages the data flows through the execution of the topology. It creates a processing pipeline consisting of one spout and two bolts. This takes two files as input, one with flight data and one with airport locations. The topology reads flight data and airport location information from files provided and connects components using shuffle grouping between the spout and first bolt, and routes flights based on their destination city between the first and second bolt. The topology runs locally for 10 seconds before shutting down.
